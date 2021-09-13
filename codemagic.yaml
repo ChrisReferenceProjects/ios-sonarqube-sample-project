@@ -46,4 +46,8 @@ workflows:
             -Dsonar.host.url=https://squad-2-core.sc-dev.io \
             -Dsonar.login=$SONAR_TOKEN \
             -Dsonar.coverageReportPaths=sonarqube-generic-coverage.xml \
+            -Dsonar.cfamily.build-wrapper-output.bypass=true \
+            -Dsonar.c.file.suffixes=- \
+            -Dsonar.cpp.file.suffixes=- \
+            -Dsonar.objc.file.suffixes=- \
 
