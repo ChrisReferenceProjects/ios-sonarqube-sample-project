@@ -7,7 +7,7 @@ workflows:
           XCODE_PROJECT: "swiftqube.xcodeproj"
           XCODE_SCHEME: "swiftqube"
           BUNDLE_ID: "io.codemagic.swiftqube"
-          SONAR_TOKEN: 0fc22d7d8fd172105f9be3a0360d2c571bb9e7df
+          SONAR_TOKEN: bad294c844210c31eb0e3c6c147105df28967d5c
           SONAR_PROJECT_KEY: my-ios-test
           SONAR_ORG_KEY: my-github-test-orga
         xcode: 12.5
@@ -41,9 +41,9 @@ workflows:
             export PATH=$PATH:$FCI_BUILD_DIR/sonar-scanner/bin
             
             sonar-scanner \
-            -Dsonar.projectKey=$SONAR_PROJECT_KEY \
-            -Dsonar.organization=$SONAR_ORG_KEY \
-            -Dsonar.host.url=https://squad-2-core.sc-dev.io \
+            -Dsonar.organization=my-github-test-orga \
+            -Dsonar.projectKey=My-Github-Test-Orga_ios-sonarcloud-sample-project \
+            -Dsonar.host.url=https://squad-2-core.sc-dev.io
             -Dsonar.login=$SONAR_TOKEN \
             -Dsonar.coverageReportPaths=sonarqube-generic-coverage.xml \
             -Dsonar.cfamily.build-wrapper-output.bypass=true \
