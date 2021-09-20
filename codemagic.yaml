@@ -42,7 +42,7 @@ workflows:
             
             sonar-scanner \
             -Dsonar.organization=my-github-test-orga \
-            -Dsonar.projectKey=My-Github-Test-Orga_ios-sonarcloud-sample-project \
+            -Dsonar.projectKey=toto \
             -Dsonar.host.url=https://squad-2-core.sc-dev.io \
             -Dsonar.login=$SONAR_TOKEN \
             -Dsonar.coverageReportPaths=sonarqube-generic-coverage.xml \
