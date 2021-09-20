@@ -8,8 +8,6 @@ workflows:
           XCODE_SCHEME: "swiftqube"
           BUNDLE_ID: "io.codemagic.swiftqube"
           SONAR_TOKEN: bad294c844210c31eb0e3c6c147105df28967d5c
-          SONAR_PROJECT_KEY: my-ios-test
-          SONAR_ORG_KEY: my-github-test-orga
         xcode: 12.5
         cocoapods: default
       triggering:
