@@ -39,9 +39,9 @@ workflows:
             export PATH=$PATH:$FCI_BUILD_DIR/sonar-scanner/bin
             
             sonar-scanner \
-            -Dsonar.organization=my-github-test-orga \
+            -Dsonar.organization=sonar-org-1 \
             -Dsonar.projectKey=My-Github-Test-Orga_ios-sonarcloud-sample-project \
-            -Dsonar.host.url=https://squad-2-core.sc-dev.io \
+            -Dsonar.host.url=https://sonarcloud.io \
             -Dsonar.login=$SONAR_TOKEN \
             -Dsonar.coverageReportPaths=sonarqube-generic-coverage.xml \
             -Dsonar.cfamily.build-wrapper-output.bypass=true \
