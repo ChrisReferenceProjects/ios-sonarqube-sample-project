@@ -7,6 +7,7 @@ workflows:
           XCODE_PROJECT: "swiftqube.xcodeproj"
           XCODE_SCHEME: "swiftqube"
           BUNDLE_ID: "io.codemagic.swiftqube"
+          SONAR_TOKEN: fdd2e1ec1b6a9fcabaf5f7735777c4c894037413
         xcode: 12.5
         cocoapods: default
       triggering:
@@ -41,7 +42,7 @@ workflows:
             -Dsonar.organization=sonar-org-1 \
             -Dsonar.projectKey=My-Github-Test-Orga_ios-sonarcloud-sample-project \
             -Dsonar.host.url=https://sonarcloud.io \
-            -Dsonar.login=${{ secrets.SONAR_TOKEN }} \
+            -Dsonar.login=$SONAR_TOKEN \
             -Dsonar.coverageReportPaths=sonarqube-generic-coverage.xml \
             -Dsonar.cfamily.build-wrapper-output.bypass=true \
             -Dsonar.c.file.suffixes=- \
