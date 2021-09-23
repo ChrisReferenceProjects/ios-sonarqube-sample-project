@@ -7,7 +7,7 @@ workflows:
           XCODE_PROJECT: "swiftqube.xcodeproj"
           XCODE_SCHEME: "swiftqube"
           BUNDLE_ID: "io.codemagic.swiftqube"
-          SONAR_TOKEN: fdd2e1ec1b6a9fcabaf5f7735777c4c894037413
+          SONAR_TOKEN: 92441447dc22744d909171c2924ca96d16ead378
         xcode: 12.5
         cocoapods: default
       triggering:
@@ -33,15 +33,14 @@ workflows:
             clean build test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
         - name: Convert coverage report to SonarCloud format
           script: |             
-            bash xccov-to-sonarqube-generic.sh Build/Logs/Test/*.xcresult/ > sonarcloud-generic-coverage.xml
+            bash xccov-to-sonarqube-generic.sh Build/Logs/Test/*.xcresult/ > sonarqube-generic-coverage.xml
         - name: Generate and upload code analysis report
           script: |  
             export PATH=$PATH:$FCI_BUILD_DIR/sonar-scanner/bin
             
             sonar-scanner \
-            -Dsonar.organization=sonar-org-1 \
-            -Dsonar.projectKey=My-Github-Test-Orga_ios-sonarcloud-sample-project \
-            -Dsonar.host.url=https://sonarcloud.io \
+            -Dsonar.projectKey=ChrisReferenceProjects_ios-sonarqube-sample-project \
+            -Dsonar.host.url=https://chvd.eu.ngrok.io \
             -Dsonar.login=$SONAR_TOKEN \
             -Dsonar.coverageReportPaths=sonarcloud-generic-coverage.xml \
             -Dsonar.cfamily.build-wrapper-output.bypass=true \
